@@ -10,8 +10,8 @@ using Persistence;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(RepositoryDbContext))]
-    [Migration("20220228223330_initial-create")]
-    partial class initialcreate
+    [Migration("20220301235624_initialCreate")]
+    partial class initialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -111,9 +111,14 @@ namespace Persistence.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("text");
 
+                    b.Property<Guid>("RegisterId")
+                        .HasColumnType("uuid");
+
                     b.HasKey("Id");
 
                     b.HasIndex("CompId");
+
+                    b.HasIndex("RegisterId");
 
                     b.ToTable("Participant");
                 });
@@ -127,14 +132,9 @@ namespace Persistence.Migrations
                     b.Property<Guid>("CDRId")
                         .HasColumnType("uuid");
 
-                    b.Property<Guid>("ParticipantId")
-                        .HasColumnType("uuid");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CDRId");
-
-                    b.HasIndex("ParticipantId");
 
                     b.ToTable("Register");
                 });
@@ -161,6 +161,12 @@ namespace Persistence.Migrations
                         .HasForeignKey("CompId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("Domain.Entities.Register", null)
+                        .WithMany("Participants")
+                        .HasForeignKey("RegisterId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Domain.Entities.Register", b =>
@@ -168,12 +174,6 @@ namespace Persistence.Migrations
                     b.HasOne("Domain.Entities.CourseAndDateRelation", null)
                         .WithMany("Registers")
                         .HasForeignKey("CDRId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Domain.Entities.Participant", null)
-                        .WithMany("Registers")
-                        .HasForeignKey("ParticipantId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -198,9 +198,9 @@ namespace Persistence.Migrations
                     b.Navigation("CourseAndDateRelations");
                 });
 
-            modelBuilder.Entity("Domain.Entities.Participant", b =>
+            modelBuilder.Entity("Domain.Entities.Register", b =>
                 {
-                    b.Navigation("Registers");
+                    b.Navigation("Participants");
                 });
 #pragma warning restore 612, 618
         }

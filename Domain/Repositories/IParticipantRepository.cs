@@ -13,5 +13,6 @@ namespace Domain.Repositories
         Task<IEnumerable<Participant>> GetAllParticipantsAsync(CancellationToken cancellationToken = default);
         Task<Participant> GetParticipantsByIdAsync(Guid participantId, CancellationToken cancellationToken = default);
         void InsertParticipant(Participant participant);
+        void InsertListOfParticipants(ICollection<Participant> participant);
     }
 }

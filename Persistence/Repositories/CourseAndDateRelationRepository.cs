@@ -17,9 +17,9 @@ namespace Persistence.Repositories
         public CourseAndDateRelationRepository(RepositoryDbContext dbContext) => _dbContext = dbContext;
 
         public async Task<IEnumerable<CourseAndDateRelation>> GetAllByCDRAsync(CancellationToken cancellationToken = default) =>
-        await _dbContext.CoursesAndDateRelations.Include(x => x.Registers).ToListAsync(cancellationToken);
+        await _dbContext.CoursesAndDateRelations.ToListAsync(cancellationToken);
         public async Task<CourseAndDateRelation> GetCDRByIdAsync(Guid cdrId, CancellationToken cancellationToken = default) =>
-        await _dbContext.CoursesAndDateRelations.Include(x => x.Registers).FirstOrDefaultAsync(x => x.Id == cdrId, cancellationToken);
+        await _dbContext.CoursesAndDateRelations.FirstOrDefaultAsync(x => x.Id == cdrId, cancellationToken);
 
         public void InsertCDR(CourseAndDateRelation cdr) => _dbContext.CoursesAndDateRelations.Add(cdr);
        

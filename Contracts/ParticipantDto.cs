@@ -14,6 +14,6 @@ namespace Contracts
         public string Phone { get; set; }
         public string Email { get; set; }
         public Guid CompId { get; set; }
-        public IEnumerable<Register> Registers { get; set; }
+        public Guid RegisterId { get; set; }
     }
 }

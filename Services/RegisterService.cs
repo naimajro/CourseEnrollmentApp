@@ -17,7 +17,6 @@ namespace Services
     internal sealed class RegisterService : IRegisterService
     {
         private readonly IRepositoryManager _repositoryManager;
-        private CourseAndDateRelationService cdrService;
         public RegisterService(IRepositoryManager repositoryManager) => _repositoryManager = repositoryManager;
         public async Task<IEnumerable<RegisterDto>> GetAllByRegisteredAsync(CancellationToken cancellationToken = default)
         {
@@ -31,6 +30,8 @@ namespace Services
         public async Task<RegisterDto> CreateRegisterAsync(RegisterForCreationDto registerForCreationDto,CancellationToken cancellationToken)
         {
             var register = registerForCreationDto.Adapt<Register>();
+            var registerId = Guid.NewGuid();
+            
 
             var course = registerForCreationDto.CDRForCreationDto.CourseForCreationDto.Adapt<Course>();
             _repositoryManager.CourseRepository.InsertCourse(course);
@@ -43,15 +44,28 @@ namespace Services
             cdr.CourseId = course.Id;
             _repositoryManager.CourseAndDateRelationRepository.InsertCDR(cdr);
 
-            var company = registerForCreationDto.ParticipantForCreationDto.CompanyForCreationDto.Adapt<Company>();
+            var company = registerForCreationDto.CompanyForCreationDto.Adapt<Company>();
             _repositoryManager.CompanyRepository.InsertCompany(company);
 
-            var participant = registerForCreationDto.ParticipantForCreationDto.Adapt<Participant>();
-            participant.CompId = company.Id;
-            _repositoryManager.ParticipantRepository.InsertParticipant(participant);
 
+            ICollection<Participant> participantsList = new List<Participant>();
+
+            var participant = registerForCreationDto.ParticipantForCreationDto.Adapt<ICollection<Participant>>();
+            
+            foreach (var par in participant)
+            {
+                par.CompId=company.Id;
+                par.RegisterId = registerId;
+                participantsList.Add(par);
+            }
+
+            _repositoryManager.ParticipantRepository.InsertListOfParticipants(participantsList);
+
+            register.Id = registerId;
             register.CDRId = cdr.Id;
-            register.ParticipantId = participant.Id;
+            register.Participants = participantsList;
+
+
 
             _repositoryManager.RegisterRepository.InsertRegister(register);
 

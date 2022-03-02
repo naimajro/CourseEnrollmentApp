@@ -10,7 +10,6 @@ namespace Domain.Entities
     {
         public Guid Id { get; set; }
         public Guid CDRId { get; set; }
-        public Guid ParticipantId { get; set; }
-
+        public ICollection<Participant> Participants { get; set; }
     }
 }

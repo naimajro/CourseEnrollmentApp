@@ -34,7 +34,7 @@ namespace Services
                         var dateId = Guid.NewGuid();
                         var cdrId = Guid.NewGuid();
                         dates.Add(new Date() { Id = dateId, CourseDate = DateTime.Parse(dateList.ToString("MM/dd/yyyy HH:mm"))});
-                        cdrs.Add(new CourseAndDateRelation() { Id = cdrId, CourseId = courseId, DateId = dateId});    
+                        cdrs.Add(new CourseAndDateRelation() { Id = cdrId, CourseId = courseId, DateId = dateId });    
                     }
                 }
 

@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Persistence.Migrations
 {
-    public partial class initialcreate : Migration
+    public partial class initialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -46,27 +46,6 @@ namespace Persistence.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Participant",
-                columns: table => new
-                {
-                    Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    Name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
-                    Email = table.Column<string>(type: "text", nullable: true),
-                    Phone = table.Column<string>(type: "text", nullable: true),
-                    CompId = table.Column<Guid>(type: "uuid", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Participant", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Participant_Company_CompId",
-                        column: x => x.CompId,
-                        principalTable: "Company",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "CourseAndDateRelation",
                 columns: table => new
                 {
@@ -96,8 +75,7 @@ namespace Persistence.Migrations
                 columns: table => new
                 {
                     Id = table.Column<Guid>(type: "uuid", nullable: false),
-                    CDRId = table.Column<Guid>(type: "uuid", nullable: false),
-                    ParticipantId = table.Column<Guid>(type: "uuid", nullable: false)
+                    CDRId = table.Column<Guid>(type: "uuid", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -108,10 +86,32 @@ namespace Persistence.Migrations
                         principalTable: "CourseAndDateRelation",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Participant",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Name = table.Column<string>(type: "character varying(50)", maxLength: 50, nullable: true),
+                    Email = table.Column<string>(type: "text", nullable: true),
+                    Phone = table.Column<string>(type: "text", nullable: true),
+                    CompId = table.Column<Guid>(type: "uuid", nullable: false),
+                    RegisterId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Participant", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Register_Participant_ParticipantId",
-                        column: x => x.ParticipantId,
-                        principalTable: "Participant",
+                        name: "FK_Participant_Company_CompId",
+                        column: x => x.CompId,
+                        principalTable: "Company",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Participant_Register_RegisterId",
+                        column: x => x.RegisterId,
+                        principalTable: "Register",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
@@ -132,18 +132,24 @@ namespace Persistence.Migrations
                 column: "CompId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Participant_RegisterId",
+                table: "Participant",
+                column: "RegisterId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Register_CDRId",
                 table: "Register",
                 column: "CDRId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Register_ParticipantId",
-                table: "Register",
-                column: "ParticipantId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Participant");
+
+            migrationBuilder.DropTable(
+                name: "Company");
+
             migrationBuilder.DropTable(
                 name: "Register");
 
@@ -151,16 +157,10 @@ namespace Persistence.Migrations
                 name: "CourseAndDateRelation");
 
             migrationBuilder.DropTable(
-                name: "Participant");
-
-            migrationBuilder.DropTable(
                 name: "Course");
 
             migrationBuilder.DropTable(
                 name: "Date");
-
-            migrationBuilder.DropTable(
-                name: "Company");
         }
     }
 }

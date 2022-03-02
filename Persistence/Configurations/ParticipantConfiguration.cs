@@ -15,16 +15,10 @@ namespace Persistence.Configurations
         {
             builder.ToTable(nameof(Participant));
             builder.HasKey(participant => participant.Id);
-            builder.Property(register => register.Id);
+            builder.Property(register => register.Id).ValueGeneratedOnAdd();
             builder.Property(participant => participant.Name).HasMaxLength(50);
             builder.Property(participant => participant.Email);
             builder.Property(participant => participant.Phone);
-
-            builder.HasMany(participant => participant.Registers)
-                .WithOne()
-                  .HasForeignKey(register => register.ParticipantId)
-                  .OnDelete(DeleteBehavior.Cascade);
-
         }
     }
 }

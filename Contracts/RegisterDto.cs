@@ -11,7 +11,7 @@ namespace Contracts
     {
         public Guid Id { get; set; }
         public Guid CDRId { get; set; }
-        public Guid ParticipantId { get; set; }
+        public IEnumerable<Participant> Participants { get; set; }
 
     }
 }

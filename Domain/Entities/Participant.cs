@@ -13,7 +13,7 @@ namespace Domain.Entities
         public string Email { get; set; }
         public string Phone { get; set; }
         public Guid CompId { get; set; }
-        public ICollection<Register> Registers { get; set; }    
+        public Guid RegisterId { get; set; }    
 
     }
 }

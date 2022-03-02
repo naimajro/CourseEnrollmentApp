@@ -23,5 +23,6 @@ namespace Persistence.Repositories
             await _dbContext.Participants.Include(x => x.Name).FirstOrDefaultAsync(x => x.Id == participantId, cancellationToken);
 
         public void InsertParticipant(Participant participant) => _dbContext.Participants.Add(participant);
+        public void InsertListOfParticipants(ICollection<Participant> participant) => _dbContext.Participants.AddRangeAsync(participant);
     }
 }

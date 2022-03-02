@@ -9,15 +9,12 @@ namespace Persistence.Configurations
         public void Configure(EntityTypeBuilder<Register> builder)
         {
             builder.ToTable(nameof(Register));
-            builder.HasKey(r =>  r.Id );
-            builder.Property(r => r.Id).ValueGeneratedOnAdd();
-            //builder.HasOne(rr => rr.CourseAndDateRelation)
-            //    .WithMany(r => r.Registers)
-            //    .HasForeignKey(rr => rr.CDRId);
-
-            //builder.HasOne(rr => rr.Participants)
-            //    .WithMany(r => r.Registers)
-            //    .HasForeignKey(rr => rr.ParticipantId);
+            builder.HasKey(register =>  register.Id );
+            builder.Property(participant => participant.Id ).ValueGeneratedOnAdd();
+            builder.HasMany(register => register.Participants)
+               .WithOne()
+                 .HasForeignKey(participant => participant.RegisterId)
+                 .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
