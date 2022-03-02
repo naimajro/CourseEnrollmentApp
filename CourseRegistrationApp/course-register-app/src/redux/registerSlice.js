@@ -10,20 +10,18 @@ export const addRegisterAsync = createAsyncThunk(
       },
       body: JSON.stringify({
         cdrForCreationDto: {
-          dateForCreationDto: { date: payload.course.date },
-          courseForCreationDto: { name: payload.course.name },
+          dateForCreationDto: { courseDate: "2022-03-01T14:37:29.543Z" },
+          courseForCreationDto: { name: 'coursename1' },
         },
 
-        participantForCreationDto: {
-          companyForCreationDto: {
-            name: payload.company.name,
-            phone: payload.company.phone,
-            email: payload.company.phone,
-          },
-          name: payload.participant.name,
-          phone: payload.participant.phone,
-          email: payload.participant.email,
-        },
+        participantForCreationDto:
+          payload.participant
+        ,
+        companyForCreationDto: {
+          name: payload.company.name,
+          phone: payload.company.phone,
+          email: payload.company.email,
+        }
       }),
     });
 
@@ -47,13 +45,9 @@ export const registerSlice = createSlice({
         company: {
           name: action.payload.company.name,
           phone: action.payload.company.phone,
-          email: action.payload.company.phone,
+          email: action.payload.company.email,
         },
-        participant: {
-          name: action.payload.participant.name,
-          phone: action.payload.participant.phone,
-          email: action.payload.participant.email,
-        },
+        participant: action.payload.participant,
       };
       state.push(register);
     },

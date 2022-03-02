@@ -9,19 +9,21 @@ import { addRegisterAsync } from "../redux/registerSlice";
 const Register = () => {
     
   const [company, setCompany] = useState({
-    companyName: "",
-    companyEmail: "",
-    companyPhone: "",
+    name: "",
+    email: "",
+    phone: "",
   });
-  const [participants, setParticipants] = useState({
-    participantsName: "",
-    participantsEmail: "",
-    participantsPhone: "",
-  });
+  const [participantsToBePosted, setParticipantsToBePosted] = useState([{
+    name: "",
+    email: "",
+    phone: "",
+  },]);
   const [course, setCourse] = useState({
-    courseName: "",
-    courseDate: "",
+    name: "",
+    date: "",
   });
+
+
   const dispatch = useDispatch();
 
   const handleCompanyChange = (event) => {
@@ -31,14 +33,33 @@ const Register = () => {
       [event.target.name]: value,
     });
   };
-
-  const handleParticipantsChange = (event) => {
+  const handleParticipantsChange = (index, event) => {
+    let n = event.target.name;
     let value = event.target.value;
-    setParticipants({
-      ...participants,
-      [event.target.name]: value,
-    });
+    console.log(index);
+    let participants = [...participantsToBePosted];
+    participants[index][n] = value;
+    setParticipantsToBePosted(participants);
+
   };
+  console.log(participantsToBePosted);
+  const [participants,setParticipants] = useState([<Participants key={0} id={0} onChange={handleParticipantsChange}/>]);
+
+  let handleAddParticipants = (e) => {
+    e.preventDefault();
+
+    setParticipants([...participants, <Participants key={participants.length} id={participants.length} onChange={handleParticipantsChange} />])
+
+    setParticipantsToBePosted(participantsToBePosted.push({
+      name: "",
+      email: "",
+      phone: "",
+    }));
+
+    console.log(participantsToBePosted);
+  }
+
+
 
   const handleCourseChange = (event) => {
     let value = event.target.value;
@@ -49,20 +70,17 @@ const Register = () => {
   };
 
   const handleSubmit = (event) => {
+    console.log(participantsToBePosted)
     event.preventDefault();
     dispatch(
       addRegisterAsync({
         company: {
-          name: company.companyName,
-          email: company.companyEmail,
-          phone: company.companyPhone,
+          name: company.name,
+          email: company.email,
+          phone: company.phone,
         },
-        course: { name: course.courseName, date: course.courseDate },
-        participant: {
-          name: participants.participantsName,
-          phone: participants.participantsPhone,
-          email: participants.participantsEmail,
-        },
+        course: { name: course.name, date: course.date },
+        participant: participantsToBePosted
       })
     );
   };
@@ -71,7 +89,8 @@ const Register = () => {
     <FormControl>
       <Course onChange={handleCourseChange} />
       <Company onChange={handleCompanyChange} />
-      <Participants onChange={handleParticipantsChange} />
+      {participants}
+      <Button variant="contained" onClick={handleAddParticipants}>Add Participant</Button>
       <Button type="submit" onClick={handleSubmit}>
         Submit
       </Button>

@@ -25,7 +25,7 @@ export const getDatesAsync = createAsyncThunk(
 export const courseSlice = createSlice({
 	name: 'course',
 	initialState: [
-		{ id: 1, name: 'course 1', dates: [] },
+		{ id: 1, name: 'course 1', dates: ['2022-03-02T10:45:15.450Z'] },
 	],
 	reducers: {
 

@@ -24,7 +24,7 @@ const Company = (props) => {
                     noValidate
                     autoComplete="off"
                 >
-                    <TextField required id="outlined-required" label="Name" name="companyName" variant="outlined" fullWidth  onChange={handleChange}/>
+                    <TextField required id="outlined-required" label="Name" name="name" variant="outlined" fullWidth  onChange={handleChange}/>
                 </Box>
             </Grid>
 
@@ -38,7 +38,7 @@ const Company = (props) => {
                     noValidate
                     autoComplete="off"
                 >
-                    <TextField required id="outlined-required" label="E-mail"  name="companyEmail" variant="outlined" fullWidth onChange={handleChange}/>
+                    <TextField required id="outlined-required" label="E-mail"  name="email" variant="outlined" fullWidth onChange={handleChange}/>
                 </Box>
             </Grid>
             <Grid item md={6}>
@@ -50,7 +50,7 @@ const Company = (props) => {
                     }
 
                 >
-                    <TextField required id="outlined-basic" label="Phone"  name="companyPhone" variant="outlined" fullWidth onChange={handleChange} />
+                    <TextField required id="outlined-basic" label="Phone"  name="phone" variant="outlined" fullWidth onChange={handleChange} />
                 </Box>
 
             </Grid>
