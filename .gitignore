@@ -1,0 +1,15 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/Web/obj/Debug/net5.0/staticwebassets/Web.StaticWebAssets.xml
+/Web/obj/Debug/net5.0/staticwebassets
+/Web/bin/Debug/net5.0/Web.StaticWebAssets.xml
+/Web/bin/Debug/net5.0
+/Web
+/obj
+/bin/Debug
+/.vs/CourseEnrollment/v16
+/.vs/CourseEnrollment/DesignTimeBuild/.dtbcache.v2
+/.vs/CourseEnrollment/DesignTimeBuild
+/.vs/CourseEnrollment
