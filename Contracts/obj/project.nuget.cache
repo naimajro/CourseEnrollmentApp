@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NQybIpWtsriK4YB1equX61faNbTItmBk4XcptMQMtcJUNbuIFVySL32srQK7jCht14xWmeHt1evYUAR+C+PgyA==",
+  "dgSpecHash": "lo+MF0AM6eLfEViyidTrQrMsrDwY3AQScMfhlz31N+lMU+Z6jtw8mV0xHFF6hxE5qbt91S+aDIyOzs6ZqDfzoQ==",
   "success": true,
-  "projectFilePath": "C:\\Repo\\MetergramSample\\Contracts\\Contracts.csproj",
+  "projectFilePath": "C:\\Repo\\CourseEnrollmentApp\\Contracts\\Contracts.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CKxbbUw02AlrSVQEz2BFMxC2hxFv0nMXp0y+Jnu0j9f4fTMyuWt2atXw66JRyG8vqsKtbGLA66evLysa2FB5iA==",
+  "dgSpecHash": "UTWC6mKgSZv7QGMxsB8K9n3PRYvdPdCSdomU3QR3xEe1e6e0jq7b3qwKfw/wGonN1fQUiX9pA7CBPgc5HVe7QQ==",
   "success": true,
-  "projectFilePath": "C:\\Repo\\MetergramSample\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Repo\\CourseEnrollmentApp\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DSQ0QyfpXdLv88aLFR+iwq5UOcjYlqIPo1YELqyNgW7rq+VN/1yuk6vDF6bBxTS9vMblwdugpveLqp2c1rtO8g==",
+  "dgSpecHash": "n4bwBYBBAsJyqbJudWLHvXH+C3DbCiEN9Xhy/rBUxtqn++CsPRgcq9gbGrWmAb9OfPMnBnh7ORSxZqbuAHRPlQ==",
   "success": true,
-  "projectFilePath": "C:\\Repo\\MetergramSample\\Services\\Services.csproj",
+  "projectFilePath": "C:\\Repo\\CourseEnrollmentApp\\Services\\Services.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ajro\\.nuget\\packages\\mapster\\7.2.0\\mapster.7.2.0.nupkg.sha512",
     "C:\\Users\\ajro\\.nuget\\packages\\mapster.core\\1.2.0\\mapster.core.1.2.0.nupkg.sha512",

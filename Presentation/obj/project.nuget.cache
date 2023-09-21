@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Izdps+R4VHaA41hFkjM5O56wqulSRshTJUdWFAOLBo/tBwcMkhcriOo6f6Lx1xdRa0NgEoNuKNUkszW06Gcfrg==",
+  "dgSpecHash": "zkyOUE47f9+rLqjQW8E/gUJz5pFAIA5ORM57NpJKJxqlLQEm3z2pEVtI0RM6ndw5H86wKQ6C1/BLqPxzARVC5Q==",
   "success": true,
-  "projectFilePath": "C:\\Repo\\MetergramSample\\Presentation\\Presentation.csproj",
+  "projectFilePath": "C:\\Repo\\CourseEnrollmentApp\\Presentation\\Presentation.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ajro\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\ajro\\.nuget\\packages\\microsoft.aspnetcore.authentication.core\\2.2.0\\microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",

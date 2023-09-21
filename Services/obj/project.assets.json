@@ -5532,19 +5532,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ajro\\.nuget\\packages\\": {}
+    "C:\\Users\\ajro\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Repo\\MetergramSample\\Services\\Services.csproj",
+      "projectUniqueName": "C:\\Repo\\CourseEnrollmentApp\\Services\\Services.csproj",
       "projectName": "Services",
-      "projectPath": "C:\\Repo\\MetergramSample\\Services\\Services.csproj",
+      "projectPath": "C:\\Repo\\CourseEnrollmentApp\\Services\\Services.csproj",
       "packagesPath": "C:\\Users\\ajro\\.nuget\\packages\\",
-      "outputPath": "C:\\Repo\\MetergramSample\\Services\\obj\\",
+      "outputPath": "C:\\Repo\\CourseEnrollmentApp\\Services\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
         "C:\\Users\\ajro\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -5558,14 +5563,14 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Repo\\MetergramSample\\Domain\\Domain.csproj": {
-              "projectPath": "C:\\Repo\\MetergramSample\\Domain\\Domain.csproj"
+            "C:\\Repo\\CourseEnrollmentApp\\Domain\\Domain.csproj": {
+              "projectPath": "C:\\Repo\\CourseEnrollmentApp\\Domain\\Domain.csproj"
             },
-            "C:\\Repo\\MetergramSample\\Persistence\\Persistence.csproj": {
-              "projectPath": "C:\\Repo\\MetergramSample\\Persistence\\Persistence.csproj"
+            "C:\\Repo\\CourseEnrollmentApp\\Persistence\\Persistence.csproj": {
+              "projectPath": "C:\\Repo\\CourseEnrollmentApp\\Persistence\\Persistence.csproj"
             },
-            "C:\\Repo\\MetergramSample\\Services.Abstractions\\Services.Abstractions.csproj": {
-              "projectPath": "C:\\Repo\\MetergramSample\\Services.Abstractions\\Services.Abstractions.csproj"
+            "C:\\Repo\\CourseEnrollmentApp\\Services.Abstractions\\Services.Abstractions.csproj": {
+              "projectPath": "C:\\Repo\\CourseEnrollmentApp\\Services.Abstractions\\Services.Abstractions.csproj"
             }
           }
         }
@@ -5608,7 +5613,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.416\\RuntimeIdentifierGraph.json"
       }
     }
   },

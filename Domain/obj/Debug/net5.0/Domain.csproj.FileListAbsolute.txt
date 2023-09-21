@@ -22,3 +22,15 @@ C:\Repo\MetergramSample\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.
 C:\Repo\MetergramSample\Domain\obj\Debug\net5.0\Domain.dll
 C:\Repo\MetergramSample\Domain\obj\Debug\net5.0\ref\Domain.dll
 C:\Repo\MetergramSample\Domain\obj\Debug\net5.0\Domain.pdb
+C:\Repo\CourseEnrollmentApp\Domain\bin\Debug\net5.0\Domain.deps.json
+C:\Repo\CourseEnrollmentApp\Domain\bin\Debug\net5.0\Domain.dll
+C:\Repo\CourseEnrollmentApp\Domain\bin\Debug\net5.0\ref\Domain.dll
+C:\Repo\CourseEnrollmentApp\Domain\bin\Debug\net5.0\Domain.pdb
+C:\Repo\CourseEnrollmentApp\Domain\obj\Debug\net5.0\Domain.csproj.AssemblyReference.cache
+C:\Repo\CourseEnrollmentApp\Domain\obj\Debug\net5.0\Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Repo\CourseEnrollmentApp\Domain\obj\Debug\net5.0\Domain.AssemblyInfoInputs.cache
+C:\Repo\CourseEnrollmentApp\Domain\obj\Debug\net5.0\Domain.AssemblyInfo.cs
+C:\Repo\CourseEnrollmentApp\Domain\obj\Debug\net5.0\Domain.csproj.CoreCompileInputs.cache
+C:\Repo\CourseEnrollmentApp\Domain\obj\Debug\net5.0\Domain.dll
+C:\Repo\CourseEnrollmentApp\Domain\obj\Debug\net5.0\ref\Domain.dll
+C:\Repo\CourseEnrollmentApp\Domain\obj\Debug\net5.0\Domain.pdb

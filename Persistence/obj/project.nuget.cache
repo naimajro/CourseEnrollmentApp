@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BqCgDQI0afxUF5hzn2rPeP5r/TK4m2/czcM+oH9g37vzo5FXzb7g8j17jvdRzZYOy2ofSp9jWkjm3jy1TRgwiA==",
+  "dgSpecHash": "rp/RzhIbyGf4OTsw1OFcQ7YXJNWvj8zvqoPw2FowqLtTXyy+UxVxVJ7hrNtpP5NqiOlaaKsNIvPNGfKKP5qHEA==",
   "success": true,
-  "projectFilePath": "C:\\Repo\\MetergramSample\\Persistence\\Persistence.csproj",
+  "projectFilePath": "C:\\Repo\\CourseEnrollmentApp\\Persistence\\Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ajro\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ajro\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

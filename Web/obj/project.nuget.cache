@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "07epXXavgitciMyp+6FC7Uf3TPLVwy+sT9dncUB+UPFtigzQECwaZ5AEoXvdznavnWC9RpVyC62vwSBZmowdWw==",
+  "dgSpecHash": "guAccC6FX5yTfkz7qTImcXrlLJv+MEAmfQsXdb13J/HxsPGJkHb7KluTM2yohCIE+aCUnFrfOEdWzHJE/fCm8w==",
   "success": true,
-  "projectFilePath": "C:\\Repo\\MetergramSample\\Web\\Web.csproj",
+  "projectFilePath": "C:\\Repo\\CourseEnrollmentApp\\Web\\Web.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ajro\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\ajro\\.nuget\\packages\\mapster\\7.2.0\\mapster.7.2.0.nupkg.sha512",
