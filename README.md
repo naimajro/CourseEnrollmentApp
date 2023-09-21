@@ -20,7 +20,7 @@ The application and the database are both running on docker.
 
 Setting up the front-end application
 
-Open the folder on CourseRegistration_App/course-register-app
+Open the folder on CourseRegistrationApp/course-register-app
 
 1.npm install
 
