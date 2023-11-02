@@ -1,0 +1,47 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: onionarchitecture-db-statefulset
+spec:
+  serviceName: onionarchitecture-db-service
+  replicas: 1  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: onionarchitecture-db
+  template:
+    metadata:
+      labels:
+        app: onionarchitecture-db
+    spec:
+      containers:
+        - name: onionarchitecture-db
+          image: postgres:13.2
+          env:
+            - name: POSTGRES_DB
+              value: onionarchitecture
+            - name: POSTGRES_USER
+              value: postgres
+            - name: POSTGRES_PASSWORD
+              value: postgres
+          ports:
+            - containerPort: 5432
+  volumeClaimTemplates:
+    - metadata:
+        name: postgres-data
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        resources:
+          requests:
+            storage: 1Gi
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: onionarchitecture-db-service
+spec:
+  selector:
+    app: onionarchitecture-db
+  ports:
+    - protocol: TCP
+      port: 5432
+      targetPort: 5432

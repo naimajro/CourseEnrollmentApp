@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: onionarchitecture-web-deployment
+spec:
+  replicas: 1  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: onionarchitecture-web
+  template:
+    metadata:
+      labels:
+        app: onionarchitecture-web
+    spec:
+      containers:
+        - name: onionarchitecture-web
+          image: onionarchitectureweb
+          ports:
+            - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: onionarchitecture-web-service
+spec:
+  selector:
+    app: onionarchitecture-web
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
